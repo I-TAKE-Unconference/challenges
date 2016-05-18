@@ -1,33 +1,23 @@
-# Challenge #3: Describe briefly all the bugs you find in this code
+# Challenge #4: Review this code and write down all the code smells you found
 
 ## Instructions
 
-Describe briefly all the bugs you can find in the file "Tic.cs" from the "code" folder. The code is a naive implementation of the TicTacToe game.
+Review the file from the code folder. Write down all the code smells you found in the solution.txt file.
 
-The code implements a naive TicTacToe game. The moves are introduced by the two users from the console. The board is considered to be 3x3 and the move is represented as an integer from 1 to 9. Each number represents a place on the board, going from left to right and top to bottom, like this:
+For each code smell, specify:
 
-1 2 3
-4 5 6
-7 8 9
+* the line where you found it
+* the name of the code smell
+* paste the code fragment that shows the smell
 
-After all the moves are introduced, the program decides the winner.
-
-For each bug you find, write down in the file "solution.txt" the following:
-
-* description of current behavior
-* description of expected behavior
-* location of bug (method or line number)
-
-When done, make a pull request with the title "challenge 3".
+When done, make a pull request with the title "challenge 4".
 
 ## Scoring
 
-You get points for: clarity of description, completion of description and the number of bugs found.
+You get points for: clarity of description and on the number of code smells found.
 
 You will get:
 
 * 0 points if no pull request 
 * 1 point if you make a pull request even if there's no solution
 * 2-20 points if you make a pull request with a partial or complete solution
-
-

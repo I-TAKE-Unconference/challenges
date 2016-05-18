@@ -1,6 +1,6 @@
 # Challenge #2: Write all the test names you would write 
 
-Write a comprehensive list of all the test names you would write for the class "GenerateCsv". When done, make a pull request with the title "challenge 2".
+Write a comprehensive list of all the test names you would write for the class from the code folder. When done, make a pull request with the title "challenge 2".
 
 ## Details
 

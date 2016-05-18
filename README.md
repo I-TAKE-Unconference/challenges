@@ -30,14 +30,10 @@ Read the full instructions in the challenge-1/problem.txt file.
 
 Read the full instructions in the challenge-2/problem.txt file.
 
-## 3. For max 20 points:  Describe briefly all the bugs you find in this code
+## 3. For max 30 points: Review this code and write down all the code smells you found
 
 Read the full instructions in the challenge-3/problem.txt file.
 
-## 4. For max 20 points: Review this code and write down all the code smells you found
+## 4. For max 40 points: Design a solution for Tetris using CRC cards.
 
 Read the full instructions in the challenge-4/problem.txt file.
-
-## 5. For max 30 points: Refactor this code.
-
-Read the full instructions in the challenge-5/problem.txt file.

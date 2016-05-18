@@ -1,23 +1,15 @@
-# Challenge #4: Review this code and write down all the code smells you found
+# Challenge #5: Design using CRC cards 
 
 ## Instructions
 
-Review the file "Calculation.cs" from the code folder. Write down all the code smells you found in the solution.txt file.
-
-For each code smell, specify:
-
-* the line where you found it
-* the name of the code smell
-* paste the code fragment that shows the smell
-
-When done, make a pull request with the title "challenge 4".
+Design a solution for the Tetris game using CRC cards.
 
 ## Scoring
 
-You get points for: clarity of description and on the number of code smells found.
+You get points for: solution that fits the problem, simplicity of the solution, and following SOLID principles. 
 
 You will get:
 
 * 0 points if no pull request 
 * 1 point if you make a pull request even if there's no solution
-* 2-20 points if you make a pull request with a partial or complete solution
+* 2-30 points if you make a pull request with a partial or complete solution
