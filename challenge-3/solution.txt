@@ -1,0 +1,152 @@
+- inconsistent use of static and object methods
+public static int Chance(int d1, int d2, int d3, int d4, int d5)
+vs
+ public int Fours()
+ 
+- line 14: no pascal casing, no null checks for pointers like int[] 
+public static int yahtzee(params int[] dice)
+
+- lines 48,49: we could have initalised the variable on the same line
+        int s;    
+        s = 0;
+		
+- line 59: unconsistent variable names (d1-4, _5)
+public Yahtzee(int d1, int d2, int d3, int d4, int _5)
+
+- lines 31,32: variable is not incremented on the same line like for the others cases.
+        if (d5 == 1) 
+            sum++;
+			
+- line 58: the variable should have been declared at the begining of the class; the variable could be declared private
+protected int[] dice;
+
+- line 84: the variable i could have been declared in the for
+        int i;
+		
+- the methods Fours, Fives, Sixes can be refactored in one method that takes the number to check as an argument
+public int Fours()
+public int Fives()
+public int sixes()
+
+- the static methods Ones, Twos, Threes could be implemented exactly like Fours, Fives, Sixes using a common method (see previous line)
+public static int Ones(int d1, int d2, int d3, int d4, int d5) {
+public static int Twos(int d1, int d2, int d3, int d4, int d5) {
+public static int Threes(int d1, int d2, int d3, int d4, int d5) {
+
+- line 91: the sixes is not in Pascal casing
+public int sixes()
+
+- line 136: unconsistent variable names
+int[] tallies;
+
+- line 3: the method is static and doesn't use the class dice variable. In this case we could replace the code with an iteration + sum over dice.
+    public static int Chance(int d1, int d2, int d3, int d4, int d5)
+    {
+        int total = 0;
+        total += d1;
+        total += d2;
+        total += d3;
+        total += d4;
+        total += d5;
+        return total;
+    }
+	
+- line 14: static method, received an array dice instead of the class variable dice; misleading name.
+ public static int yahtzee(params int[] dice)
+ 
+- line 19: comparing with != instead of <
+for (int i = 0; i != 6; i++)
+
+- line 18: we could directly test if the counts[die-1] is 5, in this case return 50 and skip the next for.
+ counts[die-1]++;
+ 
+- line 73: comparing with != instead of <
+ for (int at = 0; at != 5; at++) {
+ 
+- line 125: inconsistent variable name i while before was at used; += used while before ++
+for (int i = 0; i < 6; i += 1)
+
+- FourOfAKind and ThreeOfAKind could be refactored into one method that takes as an argument the number of "kinds"
+    public static int FourOfAKind(int _1, int _2, int d3, int d4, int d5)
+    {
+        int[] tallies;
+        tallies = new int[6];
+        tallies[_1-1]++;
+        tallies[_2-1]++;
+        tallies[d3-1]++;
+        tallies[d4-1]++;
+        tallies[d5-1]++;
+        for (int i = 0; i < 6; i++)
+            if (tallies[i] == 4)
+                return (i+1) * 4;
+        return 0;
+    }
+
+    public static int ThreeOfAKind(int d1, int d2, int d3, int d4, int d5)
+    {
+        int[] t;
+        t = new int[6];
+        t[d1-1]++;
+        t[d2-1]++;
+        t[d3-1]++;
+        t[d4-1]++;
+        t[d5-1]++;
+        for (int i = 0; i < 6; i++)
+            if (t[i] == 3)
+                return (i+1) * 3;
+        return 0;
+    }
+	
+- line 154: usually the tallies variable name is used, here is t
+   t = new int[6];
+   
+- line 221 and 227: the checks could be made in one for
+for (i = 0; i != 6; i += 1)
+            if (tallies[i] == 2) {
+                _2 = true;
+                _2_at = i+1;
+            }
+
+        for (i = 0; i != 6; i += 1)
+            if (tallies[i] == 3) {
+                _3 = true;
+                _3_at = i+1;
+            }
+			
+- lines 48,49,71,72,83,84,153,154,168,169,204: the variable should be initalised upon declared
+        int s;    
+        s = 0;
+		etc.
+-- see code --
+
+- line 210 redundant spaces
+
+
+
+
+
+- lines 221,227 : comparation with != instead of <
+for (i = 0; i != 6; i += 1)
+            if (tallies[i] == 2) {
+                _2 = true;
+                _2_at = i+1;
+            }
+
+        for (i = 0; i != 6; i += 1)
+            if (tallies[i] == 3) {
+                _3 = true;
+                _3_at = i+1;
+            }
+
+			
+- line 58: should be Dice
+ protected int[] dice;
+ 
+- lines 205-209: naming convention not respected should be camel case
+       bool _2 = false;
+        int i;
+        int _2_at = 0;
+        bool _3 = false;
+        int _3_at = 0;
+
+
