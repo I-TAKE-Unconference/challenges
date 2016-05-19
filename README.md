@@ -1,4 +1,4 @@
-Welcome to the I TAKE Unconference 2015 Contest!
+Welcome to the I TAKE Unconference Contest!
 
 # About the Contest
 
