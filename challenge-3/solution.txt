@@ -1,0 +1,55 @@
+line3 (but also actually in all the functions with ints parameters)
+primitive obsession
+public static int Chance(int d1, int d2, int d3, int d4, int d5)
+
+line25 (but also actually in all the public static function)
+globally accessible functions
+public static int Ones(int d1, int d2, int d3, int d4, int d5)
+
+line 58
+variable should be private if not used elsewhere
+    protected int[] dice;
+
+whole file
+lack of consistency in naming (naming variables, capitalize function or not?)
+    public int Fives()
+    public int sixes()
+    public static int FourOfAKind(int _1, int _2, int d3, int d4, int d5)
+
+whole file
+mixing OO code and procedural code
+    protected int[] dice;
+    public Yahtzee(int d1, int d2, int d3, int d4, int _5)
+	=> kind of OO
+	public static int Threes(int d1, int d2, int d3, int d4, int d5)
+	=> kind of procedural 
+	
+In functions Ones/Two/Three/Four/Fives/Sixes
+Behavior duplication
+		    public static int Ones(int d1, int d2, int d3, int d4, int d5) {
+        int sum = 0;
+        if (d1 == 1) sum++;
+        if (d2 == 1) sum++;
+        if (d3 == 1) sum++;
+        if (d4 == 1) sum++;
+        if (d5 == 1) 
+            sum++;
+
+        return sum;
+    }
+
+    public static int Twos(int d1, int d2, int d3, int d4, int d5) {
+        int sum = 0;
+        if (d1 == 2) sum += 2;
+        if (d2 == 2) sum += 2;
+        if (d3 == 2) sum += 2;
+        if (d4 == 2) sum += 2;
+        if (d5 == 2) sum += 2;
+        return sum;
+    }
+
+
+line 14 and 59
+Name ambiguity
+    public static int yahtzee(params int[] dice)
+    public Yahtzee(int d1, int d2, int d3, int d4, int _5)
