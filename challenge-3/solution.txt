@@ -1,0 +1,215 @@
+============
+** line 3
+
+public static int Chance(int d1, int d2, int d3, int d4, int d5)
+
+** the method name does not describe what the method really does
+** the method name begins with an upper case letter; it should begin with a lower case letter
+
+============
+ ** line 6 to 10
+
+total += d1;
+total += d2;
+total += d3;
+total += d4;
+total += d5;
+
+** 5 unnecesary operations; bad for code readability and performance; 
+this could have been written in one line: total = d1 + d2 + d3 + d4 + d5
+
+============
+** line 17 and 18
+
+foreach (int die in dice)
+	counts[die-1]++;
+	
+** before doing counts[die-1]++, it should checked if die is <= 6; otherwise, we might get an ArrayIndexOutOfBounds exception
+
+============
+** line 19
+
+for (int i = 0; i != 6; i++)
+
+** syntactically it's correct, but it's a bit confusing; it should better be i < 6
+** instead of hardcoding the length of the vector counts, a variable size should be used
+
+============
+** line 25, 37, 47 (methods Ones, Twos, Threes)
+
+** it's a lot of code duplication; there should be a more generically method, which receives an argument,
+compares it with d1...d5 arguments, and adds it to the sum
+** the name of the methods begins with an uppercase letter; it should be lowercase
+
+============
+** line 48, 49
+
+int s;    
+s = 0;
+
+** s should be initialized upon declaration; it's better for code readability
+
+============
+** line 58
+
+protected int[] dice;
+
+** variable dice should be private if it's not accessed outside of the class
+** this declaration should be placed after the 1st line (public class Yahtzee); 
+it's very disturbing to declare the attributes randomly throughout the class
+
+============
+** line 59 
+
+public Yahtzee(int d1, int d2, int d3, int d4, int _5)
+
+** inconsistent name for parameters due to the last one _5; Also the name is very disturbing (bad for code readability),
+ it should begin with an alphabet letter
+** this is the constructor of the class; it should be placed at the begining of the class, after the attributes declaration;
+it's disturbing to have it between other methods (bad for code readability).
+
+============
+** line 69, 81, 91
+
+** the methods called Four, Fives do the same thing (unnecessary code duplication); there should be a more generically method that receives 
+an int parameter and  iterates over dice vector, adds the parameter to the sum, etc.
+
+============
+** line 70, 71
+
+int sum;    
+sum = 0;
+
+** sum should be initialized upon declaration; it's better for code readability
+
+============
+** line 73
+
+ for (int at = 0; at != 5; at++)
+
+** instead of hardcoding the value 5, it should be dice.Length. Otherwise, if the length of the dice vector changes,
+this method might throw an ArrayIndexOutOfBounds exception, or not considering all the values from the vector.
+** syntactically it's correct, but it's a bit confusing; it should better be at < 5 instad of at != 5
+
+============
+** line 84
+
+int i;
+
+** there's no need to declare i outside of the for loop, because it's not used somewhere else;
+it should be :  for (int i = 0; i < dice.Length; i++) 
+
+============
+** line 103 to 107
+** same problems for lines 118 to 122
+** same problems for lines 140 to 144
+** same problems for lines 155 to 159 
+** same problems for lines 170 to 174 
+** same problems for lines 2015 to 219 
+
+counts[d1-1]++;
+counts[d2-1]++;
+counts[d3-1]++;
+counts[d4-1]++;
+counts[d5-1]++;
+
+
+** code duplication; the index variables should be placed into an array and iterate upon it
+** before doing tallies[$X-1]++, it should be checked if $x it's >=1 and <=6, otherwise the method might throw an ArrayIndexOutOfBounds exception
+
+============
+** line 102 and 109
+
+int[] counts = new int[6];
+for (at = 0; at != 6; at++)
+
+** instead of hardcoding the value 6, there should be a size variable used, with the value 6; this way, if we want to change the length of the array,
+we don't have look everywhere to see where it's used and change it
+
+============
+** line 109
+
+for (at = 0; at != 6; at++)
+
+** syntactically it's correct, but it's a bit confusing; it should better be at < 5 instad of at != 6
+
+============
+** line 109 and 110
+
+for (at = 0; at != 6; at++)
+	if (counts[6-at-1] == 2)
+		
+** this just iterates over the counts vector and compares the value with 2; there's no need to index counts with 6-at-1.
+It's too complicated and bad for code readability. It should just be counts[at]
+
+============
+** line 125 and 126
+
+for (int i = 0; i < 6; i += 1)
+	if (counts[6-i-1] == 2) {
+		
+** this just iterates over the counts vector and compares the value with 2; there's no need to index counts with 6-i-1.
+It's too complicated and bad for code readability. It should just be counts[i]
+============
+** line 109 and 125
+
+** the for loops that start at the lines listed above are useless; counts[x] is always 1, and it will never change;
+
+============
+** line 136
+
+public static int FourOfAKind(int _1, int _2, int d3, int d4, int d5)
+
+** bad nameing for the first two arguments : _1 and _2 (very disturbing and inconsistent with the latter ones)
+
+============
+** lines 145 to 147
+
+for (int i = 0; i < 6; i++)
+	if (tallies[i] == 4)
+		return (i+1) * 4;
+
+** insted of hardcoding the value 6 for the length of the vector, it should be declared a size variable set with the value 6, and use that insead,
+to avoid inconsistency problems
+** also the loop is useless (it will not do anything), because all the values from tallies vector are 1
+
+============
+** lines 175 to 179 
+** same problems for line 193 to 197
+
+if (tallies[0] == 1 &&
+            tallies[1] == 1 &&
+            tallies[2] == 1 &&
+            tallies[3] == 1 &&
+            tallies[4] == 1)
+			
+** the code is very disturbing, the if clause very log, and it duplicates code; instead there should be a for loop, interating over tallies vector,
+and if a value is not 1, it should return 0.
+
+============
+** lines 205 to 209
+
+bool _2 = false;
+int i;
+int _2_at = 0;
+bool _3 = false;
+int _3_at = 0;
+
+** bad nameing; the names should begin with an alphabet letter
+** also the name do not suggest anything
+
+============
+** lines 211 to 213
+
+** useless empty lines; very disturbing for code readability
+
+============
+** lines 221 to 231
+
+for (i = 0; i != 6; i += 1) {....}
+for (i = 0; i != 6; i += 1) {...}
+
+** code duplication for both for loops 
+** they are useless, they do not do anything because all the values from tallies vector are 1
+============
+
