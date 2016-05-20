@@ -1,4 +1,7 @@
- def computeFraction(inputValue):
+from decimal import *
+import math
+
+def computeFraction(inputValue):
 	global numerator
 	global denominator
 	getcontext().prec = 6
