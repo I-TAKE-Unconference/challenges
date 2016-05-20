@@ -1,0 +1,41 @@
+== Tetris ==
+	** Responsabilities **
+		draw game grid
+		compute score
+		create next random piece
+		handle current piece (move left/right/down, rotate)
+		check game end
+		start/stop/resume/end game
+		check if row complete
+		remove full row
+		play apropriate sounds
+		listen for key events
+	** Collaborators **
+		GridCanvas
+		TetrisSound
+		TetrisPiece
+
+
+== GridCanvas ==
+	** Responsabilities **
+		grid size
+		clear grid
+		paint grid
+	** Collaborators **
+
+
+== TetrisSound ==
+	** Responsabilities **
+		play/stop game soundTrack
+		play game over sound
+		play destroy row sound
+	** Collaborators **
+
+
+== TetrisPiece ==
+	** Responsabilities **
+		position (X, Y)
+		move left/right/down
+		can move left/right/down
+		rotate
+	** Collaborators **

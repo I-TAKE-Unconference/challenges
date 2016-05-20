@@ -1,0 +1,7 @@
+testIntegerInput
+testFileContentIsCorrect
+testDivisionByZeroExceptionThrown
+test6DigitsPrecision
+testNonIntegerInputExceptionThrown
+testVeryBigIntegerInputExceptionThrown
+testFileNotExistExceptionThrown
