@@ -1,0 +1,31 @@
+- according to naming convention, variable names should be more descriptive than d1, d2, d3, d4, _5
+- method "Chance" (line 3) could have received an array of dice and the total could have been computed using a for loop
+- according to C# naming conventions, methods should be named with verbs and start with capital letter; methods "yahtzee" (line 14) and
+  sixies (line 91) are not compliant with any of these rules; all other methods ("Chance", "Ones", "Twos", ..., "ThreeOfAKind", ..., "SmallStraight",
+  "FullHouse") start with capital letter, but aren't verbs
+- methods Ones, Twos, Threes, Fours, Fives and sixes are not defined one after another in the class; the constructor of the class is defined
+  between Threes and Fours making the class hard to read and understand
+- methods Ones, Twos, Threes, Fours, Fives and sixes do not verify the same thing: Ones, Twos and Threes receive 5 parameters, each
+  parameter representing a die, whereas Fours, Fives and sixes verify an attribute of a class which represents the dice as a protected
+  array (although all of them may be used for verifying the array, if Ones, Twos and Threes are called with dice[0], dice[1], ..., dice[5]
+  as parameters; this is a readability issue)
+- methods Ones, Twos, Threes, Fours, Fives and sixes could have been merged into one method, CheckValue, taking as parameters an array of dice and
+  a value between 1 and 6; this method would return the number of dice from the list that have the value given as parameter
+- in method Fours, the for loop goes until 5 (a hardcoded value); the length of the array should be used instead
+- another readability issue: methods Ones, ... , sixes use as local variable for summing up the score parameters s or sum;
+  there should be only one name, better sum, which is more descriptive than s
+- methods ScorePair and TwoPair do the same thing; also, method TwoPair is more complicated than ScorePair
+- method ScorePair would have been simpler if instead of 5 int parameters would have received an array of ints
+- methods ScorePair, ThreeOfAKind, FourOfAKind and yahtzee could have been merge into one method, CheckPair, receiving an array for
+  dice and a value to be check; the method would use 2 for loops very similar to the way the yahtzee method is implemented; a special
+  case should be implemented when the value to be checked is 5, because in this case, if the condition is met, the returned value is 50
+- for readability, methods ScorePair, ThreeOfAKind, FourOfAKind and yahtzee could have been place one after another in the class, and the
+  local variable for storing the returned value could have been named the same, let's say 'tallies'; the way it is now, this variable is
+  'tallies', 'counts' or 't'
+- methods SmallStraight and LargeStraight could have been merged and simplified; this one method, let's call it CheckStraight, could
+  have received and array for storing the dice's values; the check will pass if the tallies array would have value '1' for 5 positions in
+  a row; another check would be than necessary to see if it is a small or a large straight
+- in general, the tallies array could have be computed only once, into a special method (ComputeTallies), not in every method
+  (FullHouse, CheckStraight, CheckPairs or CheckValue); ComputeTallies would receive the array of dice and would build the tallies
+  array; the other check methods would only identify the values, pairs, straight or full house in the tallies array
+- method FullHouse could be renamed to CheckFullHouse

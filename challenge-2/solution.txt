@@ -1,0 +1,36 @@
+
+
+def test_computeFraction_invalid_param_nan_raises_exception()
+
+def test_computeFraction_invalid_param_0_raises_exception()
+
+def test_computeFraction_valid_param_string_correct_value_returned()
+
+def test_computeFraction_valid_param_infinity_correct_value_returned()
+
+def test_computeFraction_valid_param_numeric_correct_value_returned()
+
+def test_computeFraction_textToFile_is_modified_globally()
+
+
+
+def test_computeResult_computeInputValue_is called()
+
+def test_computeResult_call_to_computeInputValue_raises_exception()
+
+def test_computeResult_computeFraction_is_called()
+
+def test_computeResult_call_to_computeFraction_raises_exception()
+
+def test_computeResult_printToFileAtTimestamp_is_called()
+
+def test_computeResult_call_to_printToFileAtTimestamp_raises_exception()
+
+def test_computeResult_valid_case_correct_value_is_returned()
+
+def test_computeResult_valid_case_correct_value_is_written_to_file()
+
+
+
+
+
